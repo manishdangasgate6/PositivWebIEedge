@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="PositivWebIEedge.PositivWebIEedge.PositivIEedgeTest">
+        <methods>
+          <include name="CheckApp_Status"/>
+          <include name="ValidSignup"/>
+          <include name="BlankFullName"/>
+          <include name="InvalidPassword"/>
+          <include name="Invalid_EmailLogin"/>
+          <include name="Invalid_PasswordLogin"/>
+          <include name="Logout_Test"/>
+          <include name="Forgot_Password_with_registerd_user"/>
+          <include name="Valid_Login"/>
+          <include name="BlankEmail"/>
+          <include name="Forgot_Password_with_invalid__user"/>
+          <include name="updateCard"/>
+          <include name="changePassword"/>
+          <include name="Before"/>
+          <include name="InvalidEmail"/>
+          <include name="Edit_profile"/>
+        </methods>
+      </class> <!-- PositivWebIEedge.PositivWebIEedge.PositivIEedgeTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
