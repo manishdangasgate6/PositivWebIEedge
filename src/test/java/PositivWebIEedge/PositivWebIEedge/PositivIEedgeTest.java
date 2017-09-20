@@ -32,18 +32,22 @@ public class PositivIEedgeTest {
 
 	String baseUrl, nodeURL;
 
-
-	
-	public String st = System.setProperty("webdriver.ie.driver", "MicrosoftWebDriver.exe");
-	public WebDriver driver = new InternetExplorerDriver();
+	WebDriver driver;
 
 	@BeforeTest
 	public void Before() {
 
+		{
+
+			String exePath = "IEDriverServer.exe";
+
+			System.setProperty("webdriver.ie.driver", exePath);
+			driver = new InternetExplorerDriver();
+		}
+
 		driver.manage().window().maximize();
 	}
 
-	
 	@Test(priority = 1)
 	public void CheckApp_Status() {
 
@@ -125,68 +129,68 @@ public class PositivIEedgeTest {
 
 	}
 
-//	@Test(priority = 7)
-//	public void FaceBookSignup() throws InterruptedException {
-//
-//		driver.get("http://positivradio.test.gate6.com/web/register");
-//		driver.findElement(By.className("facebook")).click();
-//
-//		String parentWindowHandler = driver.getWindowHandle(); // Store your parent
-//		// window
-//		String subWindowHandler = null;
-//
-//		Set<String> handles = driver.getWindowHandles(); // get all window handles
-//		Iterator<String> iterator = handles.iterator();
-//		while (iterator.hasNext()) {
-//			subWindowHandler = iterator.next();
-//		}
-//		driver.switchTo().window(subWindowHandler); // switch to popup window
-//
-//		Thread.sleep(5000);
-//		String PopURL = driver.getCurrentUrl();
-//		System.out.println("TEst" + PopURL);
-//		// Now you are in the popup window, perform necessary actions here
-//
-//		driver.findElement(By.id("email")).sendKeys("manish.dangas@gate6.com");
-//		driver.findElement(By.id("pass")).sendKeys("Gate6@321");
-//		driver.findElement(By.name("login")).click();
-//
-//		driver.switchTo().window(parentWindowHandler);
-//
-//	}
-
-//	@Test(priority = 8)
-//	public void GoogleSignup() throws InterruptedException {
-//
-//		driver.get("http://positivradio.test.gate6.com/web/register");
-//		driver.findElement(By.cssSelector("button.google")).click();
-//
-//		String parentWindowHandler = driver.getWindowHandle(); // Store your parent
-//		// window
-//		String subWindowHandler = null;
-//		//
-//		Set<String> handles = driver.getWindowHandles(); // get all window handles
-//		Iterator<String> iterator = handles.iterator();
-//		while (iterator.hasNext()) {
-//			subWindowHandler = iterator.next();
-//		}
-//		driver.switchTo().window(subWindowHandler); // switch to popup window
-//
-//		Thread.sleep(5000);
-//		String PopURL = driver.getCurrentUrl();
-//		System.out.println("TEst" + PopURL);
-//		// Now you are in the popup window, perform necessary actions here
-//
-//		driver.findElement(By.id("identifierId")).sendKeys("gate6.info@gate6.com");
-//		driver.findElement(By.xpath(".//*[@id='identifierNext']/content/span")).click();
-//		Thread.sleep(4000);
-//		driver.findElement(By.xpath(".//*[@id='password']/div[1]/div/div[1]/input")).sendKeys("Goole2010A!!");
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath(".//*[@id='passwordNext']/content/span")).click();
-//
-//		driver.switchTo().window(parentWindowHandler);
-//
-//	}
+	// @Test(priority = 7)
+	// public void FaceBookSignup() throws InterruptedException {
+	//
+	// driver.get("http://positivradio.test.gate6.com/web/register");
+	// driver.findElement(By.className("facebook")).click();
+	//
+	// String parentWindowHandler = driver.getWindowHandle(); // Store your parent
+	// // window
+	// String subWindowHandler = null;
+	//
+	// Set<String> handles = driver.getWindowHandles(); // get all window handles
+	// Iterator<String> iterator = handles.iterator();
+	// while (iterator.hasNext()) {
+	// subWindowHandler = iterator.next();
+	// }
+	// driver.switchTo().window(subWindowHandler); // switch to popup window
+	//
+	// Thread.sleep(5000);
+	// String PopURL = driver.getCurrentUrl();
+	// System.out.println("TEst" + PopURL);
+	// // Now you are in the popup window, perform necessary actions here
+	//
+	// driver.findElement(By.id("email")).sendKeys("manish.dangas@gate6.com");
+	// driver.findElement(By.id("pass")).sendKeys("Gate6@321");
+	// driver.findElement(By.name("login")).click();
+	//
+	// driver.switchTo().window(parentWindowHandler);
+	//
+	// }
+	//
+	// @Test(priority = 8)
+	// public void GoogleSignup() throws InterruptedException {
+	//
+	// driver.get("http://positivradio.test.gate6.com/web/register");
+	// driver.findElement(By.cssSelector("button.google")).click();
+	//
+	// String parentWindowHandler = driver.getWindowHandle(); // Store your parent
+	// // window
+	// String subWindowHandler = null;
+	// //
+	// Set<String> handles = driver.getWindowHandles(); // get all window handles
+	// Iterator<String> iterator = handles.iterator();
+	// while (iterator.hasNext()) {
+	// subWindowHandler = iterator.next();
+	// }
+	// driver.switchTo().window(subWindowHandler); // switch to popup window
+	//
+	// Thread.sleep(5000);
+	// String PopURL = driver.getCurrentUrl();
+	// System.out.println("TEst" + PopURL);
+	// // Now you are in the popup window, perform necessary actions here
+	//
+	// driver.findElement(By.id("identifierId")).sendKeys("gate6.info@gate6.com");
+	// driver.findElement(By.xpath(".//*[@id='identifierNext']/content/span")).click();
+	// Thread.sleep(4000);
+	// driver.findElement(By.xpath(".//*[@id='password']/div[1]/div/div[1]/input")).sendKeys("Goole2010A!!");
+	// Thread.sleep(2000);
+	// driver.findElement(By.xpath(".//*[@id='passwordNext']/content/span")).click();
+	//
+	// driver.switchTo().window(parentWindowHandler);
+	//
+	// }
 
 	@Test(priority = 9)
 	public void Invalid_EmailLogin() {
@@ -238,7 +242,6 @@ public class PositivIEedgeTest {
 		Thread.sleep(5000);
 		driver.findElement(By.cssSelector("button.btn.default")).click();
 	}
-
 
 	@Test(priority = 13)
 	public void Forgot_Password_with_registerd_user() throws InterruptedException {
